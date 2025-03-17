@@ -1,0 +1,163 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('invitationcard.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+#countdown {
+    font-size: 100px;
+    font-weight: bold;
+    color: #333;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: countdownFade 1s ease infinite;
+}
+
+@keyframes countdownFade {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.flower-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 320px !important;
+    height: 500px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(0);
+    animation: popUp 0.9s ease forwards;
+    background-image: url("./images/backgroundimag.avif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 2;
+}
+
+
+
+
+
+.card h2 {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 2.1em;
+    color: #d14e4e;
+    margin: 40px 0 20px 0;
+}
+
+.card p {
+    font-family: 'Arial', sans-serif;
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 5px 0;
+}
+
+.card h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.2em;
+    color: #000;
+    margin: 15px 0;
+}
+
+.card h3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.7em;
+    color: #22576B;
+    margin: 15px 0;
+}
+
+.card p:nth-of-type(3),
+.card p:nth-of-type(4) {
+    font-family: 'Verdana', Geneva, sans-serif;
+    font-size: 0.8em;
+    margin-top: 20px;
+}
+
+.card p:last-of-type {
+    font-family: 'Courier New', Courier, monospace;
+    font-size:0.9em;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+
+
+.flower-container{
+    z-index: 20;
+}
+
+.flower-container .flower {
+    position: absolute;
+    top: -10%;
+    width: 30px;
+    height: 30px;
+    background-image: url('./images/fire.jpg');
+    background-size: cover;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10%); }
+    100% { transform: translateY(110vh); }
+}
+
+.closeBtn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #f44336;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.closeBtn:hover {
+    background-color: #e53935;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes popUp {
+    0% { transform: scale(0); }
+    60% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
